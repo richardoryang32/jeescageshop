@@ -3,7 +3,7 @@ const config = {
   datasources: {
     db: {
       url: {
-        fromEnvVar: 'DATABASE_URL',
+        fromEnvVar: "DATABASE_URL",
       },
     },
   },
