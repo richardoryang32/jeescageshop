@@ -4,9 +4,19 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import toast from "react-hot-toast"
 import Loading from "@/components/Loading"
+import { useRouter } from "next/navigation"
+import { useUser, useAuth } from "@clerk/nextjs"
+import imagekit from "@/configs/imageKit"
+import { prisma } from "@/lib/prisma"
+import axios from "axios"
 
 export default function CreateStore() {
 
+    //Get the user and router
+    const router = useRouter();
+    const{user}=useUser();
+    //let's get the token
+    const {getToken}=useAuth();
     const [alreadySubmitted, setAlreadySubmitted] = useState(false)
     const [status, setStatus] = useState("")
     const [loading, setLoading] = useState(true)
@@ -30,12 +40,42 @@ export default function CreateStore() {
         // Logic to check if the store is already submitted
 
 
+
         setLoading(false)
     }
 
     const onSubmitHandler = async (e) => {
         e.preventDefault()
         // Logic to submit the store details
+        //if the user is not logged in, return error
+        if(!user){
+            toast.error('you must be logged in to perform this action')
+            return;
+        }
+        try{
+         const token = await getToken();
+         //let's get a form data
+         const formData = new FormData();
+         formData.append('name', storeInfo.name);
+         formData.append('username', storeInfo.username);
+         formData.append('description', storeInfo.description);
+         formData.append('email', storeInfo.email);
+         formData.append('contacts', storeInfo.contact);
+         formData.append('address', storeInfo.address);
+         formData.append('image', storeInfo.image);
+
+         //make the api call to create the store
+         //using the axios library
+         const {data}= await axios.post('/api/inngest/store/create', formData, {
+            headers:{Authorization:`Bearer ${token}`}})
+            toast.success(data.message);
+        
+        }catch(error){
+            toast.error(error?.response?.data?.error || error.message);
+            return;
+        }
+
+        
 
 
     }
@@ -43,6 +83,14 @@ export default function CreateStore() {
     useEffect(() => {
         fetchSellerStatus()
     }, [])
+    //user the user is not logged in, show a message to login
+    if(!user){
+        return(
+            <div className="min-h-[80vh] flex flex-col items-center justify-center">
+                <h1 className="sm:text-2xl lg:text-3xl mx-5 font-semibold text-slate-500 text-center max-w-2xl">You must be  <span className="text-slate-500">loggedIn</span> to create a store.</h1>
+            </div>
+        )
+    }
 
     return !loading ? (
         <>
