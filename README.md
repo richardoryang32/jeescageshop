@@ -1,5 +1,5 @@
 <div align="center">
-  <h1><img src="https://gocartshop.in/favicon.ico" width="20" height="20" alt="GoCart Favicon">
+  <h1><img src="https://gocartshop.in/favicon.ico" width="20" height="20" alt="JeesCage Favicon">
    GoCart</h1>
   <p>
     An open-source multi-vendor e-commerce platform built with Next.js and Tailwind CSS.
@@ -30,14 +30,14 @@
 - **Vendor Dashboards:** Dedicated dashboards for vendors to manage products, view sales analytics, and track orders.
 - **Admin Panel:** A comprehensive dashboard for platform administrators to oversee vendors, products, and commissions.
 
-## 🛠️ Tech Stack <a name="-tech-stack"></a>
+## 🛠️ Tech Stack `<a name="-tech-stack"></a>`
 
 - **Framework:** Next.js
 - **Styling:** Tailwind CSS
 - **UI Components:** Lucide React for icons
 - **State Management:** Redux Toolkit
 
-## 🚀 Getting Started <a name="-getting-started"></a>
+## 🚀 Getting Started `<a name="-getting-started"></a>`
 
 First, install the dependencies. We recommend using `npm` for this project.
 
@@ -65,13 +65,13 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 ---
 
-## 🤝 Contributing <a name="-contributing"></a>
+## 🤝 Contributing `<a name="-contributing"></a>`
 
 We welcome contributions! Please see our [CONTRIBUTING.md](./CONTRIBUTING.md) for more details on how to get started.
 
 ---
 
-## 📜 License <a name="-license"></a>
+## 📜 License `<a name="-license"></a>`
 
 This project is licensed under the MIT License. See the [LICENSE.md](./LICENSE.md) file for details.
 

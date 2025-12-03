@@ -5,6 +5,7 @@ generator client {
 
 datasource db {
     provider = "postgresql"
+
 }
 
 // Required for creating a User: id, name, email, image, cart (optional JSON string)
