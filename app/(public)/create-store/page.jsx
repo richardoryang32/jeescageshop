@@ -119,6 +119,7 @@ export default function CreateStore() {
                             <Image
                                 src={storeInfo.image ? URL.createObjectURL(storeInfo.image) : assets.upload_area}
                                 className="rounded-lg mt-2 h-16 w-auto"
+                                alt={storeInfo.image ? 'Store logo preview' : 'Upload placeholder'}
                                 width={150}
                                 height={100}
                             />
