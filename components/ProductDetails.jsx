@@ -7,6 +7,8 @@ import { useState } from "react";
 import Image from "next/image";
 import Counter from "./Counter";
 import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+
 
 const ProductDetails = ({ product }) => {
 

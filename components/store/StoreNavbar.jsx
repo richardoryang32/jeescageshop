@@ -2,6 +2,7 @@
 import Link from "next/link"
 import { useUser,UserButton} from "@clerk/nextjs"
 
+
 const StoreNavbar = () => {
 //create the user from clerk
 const  {user} = useUser()

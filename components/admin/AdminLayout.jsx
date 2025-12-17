@@ -1,4 +1,5 @@
 'use client'
+
 import { useEffect, useState } from "react"
 import Loading from "../Loading"
 import Link from "next/link"
@@ -6,6 +7,7 @@ import { ArrowRightIcon } from "lucide-react"
 import AdminNavbar from "./AdminNavbar"
 import AdminSidebar from "./AdminSidebar"
 import { useUser, useAuth } from "@clerk/nextjs"
+import axios from "axios"
 
 const AdminLayout = ({ children }) => {
     //let's get the user and the auth

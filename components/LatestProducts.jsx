@@ -4,6 +4,7 @@ import Title from './Title'
 import ProductCard from './ProductCard'
 import { useSelector } from 'react-redux'
 
+
 const LatestProducts = () => {
 
     const displayQuantity = 4

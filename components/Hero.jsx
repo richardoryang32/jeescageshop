@@ -5,6 +5,7 @@ import Image from 'next/image'
 import React from 'react'
 import CategoriesMarquee from './CategoriesMarquee'
 
+
 const Hero = () => {
 
     const currency = process.env.NEXT_PUBLIC_CURRENCY_SYMBOL || 'GHS'
