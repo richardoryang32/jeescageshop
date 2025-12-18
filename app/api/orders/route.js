@@ -188,8 +188,7 @@ export async function GET(request) {
                 orderItems: {
                     include: {
                         product: true
-                    },
-                    address:true
+                    }
                 }
             },
             orderBy: {createdAt: 'desc'}
