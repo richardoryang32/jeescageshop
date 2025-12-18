@@ -4,7 +4,6 @@ import AddressModal from './AddressModal';
 import { useDispatch,useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
-import { Protect } from '@clerk/nextjs';
 import { useAuth,useUser } from '@clerk/nextjs';
 const OrderSummary = ({ totalPrice, items }) => {
     const {user}=useUser();

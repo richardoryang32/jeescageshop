@@ -5,7 +5,8 @@ import { toast } from "react-hot-toast"
 import { useAuth } from "@clerk/nextjs"
 import { useDispatch } from "react-redux"
 import axios from "axios"
-import { addAddress } from "@/store/addressSlice"
+import { addAddress } from "@/lib/features/address/addressSlice"
+
 
 
 const AddressModal = ({ setShowAddressModal }) => {
